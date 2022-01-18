@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+<forms [formGroup]="loginForm" (ngSubmit)="loginUser()">
+  <input type="text" name="user" placeholder="Enter name" formControlName="user">
+  <br> 
+  <span style="color:red;" *ngIf="user && user.invalid && user.touched">This field is not valid</span><br>
+  <input type="password" name="password" placeholder="Enter the password" formControlName="password">
+  <br>
+  <span style="color:red;" *ngIf="password && password.invalid && password.touched">This field is not valid</span>
+  <br>
+  <button [disabled]="loginForm.invalid">Login</button>
+</forms>
